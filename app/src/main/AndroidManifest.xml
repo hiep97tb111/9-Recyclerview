@@ -20,6 +20,8 @@
         </activity>
 
         <activity android:name=".RecyclerviewBasicAct" android:exported="true"/>
+
+        <activity android:name=".RecyclerviewMultipleTypeAct" android:exported="true"/>
     </application>
 
 </manifest>

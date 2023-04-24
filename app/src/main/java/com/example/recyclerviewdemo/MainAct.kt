@@ -17,5 +17,9 @@ class MainAct : AppCompatActivity() {
         findViewById<TextView>(R.id.tvRecyclerviewBasic).setOnClickListener {
             startActivity(Intent(this, RecyclerviewBasicAct::class.java))
         }
+
+        findViewById<TextView>(R.id.tvRecyclerviewMultipleType).setOnClickListener {
+            startActivity(Intent(this, RecyclerviewMultipleTypeAct::class.java))
+        }
     }
 }

@@ -1,6 +1,7 @@
 package com.example.recyclerviewdemo.adapter
 
 import android.graphics.Color
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -24,6 +25,7 @@ class RecyclerviewBasicAdapter(private val listData: ArrayList<RecyclerviewBasic
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.itemTvCounter.text = listData[position].counter
+        Log.e("Logger", position.toString())
 
         when {
             position % 3 == 0 -> {

@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">RecyclerviewDemo</string>
     <string name="recyclerview_basic">Recyclerview Basic</string>
+    <string name="recyclerview_multiple_type">Recyclerview Multiple Type</string>
 </resources>

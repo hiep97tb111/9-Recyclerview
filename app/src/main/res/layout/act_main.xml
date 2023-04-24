@@ -18,4 +18,17 @@
         android:background="@android:color/holo_green_light"
         android:textStyle="bold"/>
 
+    <TextView
+        android:id="@+id/tvRecyclerviewMultipleType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvRecyclerviewBasic"
+        android:layout_marginTop="20dp"
+        android:text="@string/recyclerview_multiple_type"
+        android:padding="20dp"
+        android:background="@android:color/holo_red_light"
+        android:textStyle="bold"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
