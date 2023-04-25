@@ -22,6 +22,8 @@
         <activity android:name=".RecyclerviewBasicAct" android:exported="true"/>
 
         <activity android:name=".RecyclerviewMultipleTypeAct" android:exported="true"/>
+
+        <activity android:name=".RecyclerviewNestedAct" android:exported="true"/>
     </application>
 
 </manifest>

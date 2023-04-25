@@ -31,4 +31,18 @@
         android:background="@android:color/holo_red_light"
         android:textStyle="bold"/>
 
+    <TextView
+        android:id="@+id/tvRecyclerviewNested"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvRecyclerviewMultipleType"
+        android:layout_marginTop="20dp"
+        android:text="Recyclerview Nested"
+        android:padding="20dp"
+        android:background="@android:color/holo_blue_light"
+        android:textStyle="bold"
+        tools:ignore="HardcodedText" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
