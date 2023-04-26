@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.recyclerviewdemo.R
 import com.example.recyclerviewdemo.model.RecyclerviewBasicModel
 
-class RecyclerviewBasicAdapter(private val listData: ArrayList<RecyclerviewBasicModel>): RecyclerView.Adapter<RecyclerviewBasicAdapter.ViewHolder>() {
+class RecyclerviewBasicAdapter(private val listData: ArrayList<RecyclerviewBasicModel>, private var onItemClicked: (RecyclerviewBasicModel, Int) -> Unit): RecyclerView.Adapter<RecyclerviewBasicAdapter.ViewHolder>() {
 
     class ViewHolder (view: View) : RecyclerView.ViewHolder(view){
         val itemTvCounter: TextView = view.findViewById(R.id.itemTvCounter)
@@ -37,6 +37,10 @@ class RecyclerviewBasicAdapter(private val listData: ArrayList<RecyclerviewBasic
             else -> {
                 holder.itemLayoutBasic.setBackgroundColor(Color.BLUE)
             }
+        }
+
+        holder.itemLayoutBasic.setOnClickListener {
+            onItemClicked(listData[position], position)
         }
     }
 

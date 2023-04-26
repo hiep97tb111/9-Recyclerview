@@ -2,6 +2,7 @@ package com.example.recyclerviewdemo
 
 import android.os.Bundle
 import android.util.Log
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -26,7 +27,9 @@ class RecyclerviewBasicAct: AppCompatActivity() {
 
     private fun initViews() {
         recyclerviewBasic = findViewById(R.id.recycler_view_basic)
-        recyclerViewBasicAdapter = RecyclerviewBasicAdapter(listData)
+        recyclerViewBasicAdapter = RecyclerviewBasicAdapter(listData){ model, position ->
+            Toast.makeText(this, model.counter+"/"+position, Toast.LENGTH_SHORT).show()
+        }
 
         recyclerviewBasic.setHasFixedSize(true)
         recyclerviewBasic.layoutManager = LinearLayoutManager(this)
