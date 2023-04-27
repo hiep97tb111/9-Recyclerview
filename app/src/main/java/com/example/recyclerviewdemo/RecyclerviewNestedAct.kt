@@ -1,6 +1,7 @@
 package com.example.recyclerviewdemo
 
 import android.os.Bundle
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -25,7 +26,10 @@ class RecyclerviewNestedAct: AppCompatActivity() {
 
     private fun initViews() {
         recyclerviewNestedParent = findViewById(R.id.recyclerviewNestedParent)
-        recyclerviewNestedParentAdapter = RecyclerviewNestedParentAdapter(listParent, this)
+        recyclerviewNestedParentAdapter = RecyclerviewNestedParentAdapter(listParent, this){ nestedParent, nestedChild ->
+             Toast.makeText(this, "Category: ${nestedParent.categoryName}/ Title Item: ${nestedChild.title}", Toast.LENGTH_SHORT).show()
+
+        }
 
         recyclerviewNestedParent.layoutManager = LinearLayoutManager(this, RecyclerView.VERTICAL, false)
         recyclerviewNestedParent.adapter = recyclerviewNestedParentAdapter

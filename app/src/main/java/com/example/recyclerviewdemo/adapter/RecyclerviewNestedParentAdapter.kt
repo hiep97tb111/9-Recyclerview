@@ -1,6 +1,7 @@
 package com.example.recyclerviewdemo.adapter
 
 import android.content.Context
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,7 +12,9 @@ import com.example.recyclerviewdemo.R
 import com.example.recyclerviewdemo.model.NestedChildModel
 import com.example.recyclerviewdemo.model.NestedParentModel
 
-class RecyclerviewNestedParentAdapter(private val listData: ArrayList<NestedParentModel>, private val context: Context): RecyclerView.Adapter<RecyclerviewNestedParentAdapter.ViewHolder>() {
+class RecyclerviewNestedParentAdapter(private val listDataParent: ArrayList<NestedParentModel>, private val context: Context,
+                                      private val onItemParentClick: (NestedParentModel, NestedChildModel) -> Unit)
+    : RecyclerView.Adapter<RecyclerviewNestedParentAdapter.ViewHolder>() {
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val tvCategoryName: TextView = view.findViewById(R.id.tvCategoryName)
@@ -24,20 +27,22 @@ class RecyclerviewNestedParentAdapter(private val listData: ArrayList<NestedPare
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val nestedParentModel: NestedParentModel = listData[position]
+        val nestedParentModel: NestedParentModel = listDataParent[position]
         holder.tvCategoryName.text = nestedParentModel.categoryName
 
         handleEventRecyclerviewChild(holder, position, nestedParentModel.listChild)
     }
 
     private fun handleEventRecyclerviewChild(holder: ViewHolder, position: Int, listChild: ArrayList<NestedChildModel>) {
-        val recyclerviewNestedChildAdapter = RecyclerviewNestedChildAdapter(listChild)
+        val recyclerviewNestedChildAdapter = RecyclerviewNestedChildAdapter(listChild){
+            onItemParentClick(listDataParent[position], it)
+        }
 
         holder.recyclerviewNestedChild.layoutManager = LinearLayoutManager(context, RecyclerView.HORIZONTAL, false)
         holder.recyclerviewNestedChild.adapter = recyclerviewNestedChildAdapter
     }
 
     override fun getItemCount(): Int {
-        return listData.size
+        return listDataParent.size
     }
 }
