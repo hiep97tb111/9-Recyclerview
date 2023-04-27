@@ -1,6 +1,7 @@
 package com.example.recyclerviewdemo
 
 import android.os.Bundle
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -39,7 +40,9 @@ class RecyclerviewMultipleTypeAct: AppCompatActivity() {
     }
 
     private fun initViews() {
-        recyclerviewMultipleAdapter = RecyclerviewMultipleAdapter(listData)
+        recyclerviewMultipleAdapter = RecyclerviewMultipleAdapter(listData){
+            Toast.makeText(this, it.title, Toast.LENGTH_SHORT).show()
+        }
 
         recyclerviewMultipleType = findViewById(R.id.recyclerviewMultipleType)
         recyclerviewMultipleType.layoutManager = LinearLayoutManager(this, RecyclerView.VERTICAL, false)
