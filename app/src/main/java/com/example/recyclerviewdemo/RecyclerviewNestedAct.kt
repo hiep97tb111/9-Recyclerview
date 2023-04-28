@@ -77,11 +77,29 @@ class RecyclerviewNestedAct: AppCompatActivity() {
         listChildNewcastle.add(NestedChildModel("Newcastle 5", R.drawable.ic_newcastle))
         listChildNewcastle.add(NestedChildModel("Newcastle 6", R.drawable.ic_newcastle))
 
+        val listChildTottenham = ArrayList<NestedChildModel>()
+        listChildTottenham.add(NestedChildModel("Tottenham 1", R.drawable.ic_tottenham))
+        listChildTottenham.add(NestedChildModel("Tottenham 2", R.drawable.ic_tottenham))
+        listChildTottenham.add(NestedChildModel("Tottenham 3", R.drawable.ic_tottenham))
+        listChildTottenham.add(NestedChildModel("Tottenham 4", R.drawable.ic_tottenham))
+        listChildTottenham.add(NestedChildModel("Tottenham 5", R.drawable.ic_tottenham))
+        listChildTottenham.add(NestedChildModel("Tottenham 6", R.drawable.ic_tottenham))
+
+        val listChildEverton = ArrayList<NestedChildModel>()
+        listChildEverton.add(NestedChildModel("Everton 1", R.drawable.ic_everton))
+        listChildEverton.add(NestedChildModel("Everton 2", R.drawable.ic_everton))
+        listChildEverton.add(NestedChildModel("Everton 3", R.drawable.ic_everton))
+        listChildEverton.add(NestedChildModel("Everton 4", R.drawable.ic_everton))
+        listChildEverton.add(NestedChildModel("Everton 5", R.drawable.ic_everton))
+        listChildEverton.add(NestedChildModel("Everton 6", R.drawable.ic_everton))
+
         listParent = ArrayList<NestedParentModel>()
         listParent.add(NestedParentModel("Manchester United", listChildManUnited))
         listParent.add(NestedParentModel("Arsenal", listChildArsenal))
         listParent.add(NestedParentModel("Chelsea", listChildChelsea))
         listParent.add(NestedParentModel("Liverpool", listChildLiverpool))
         listParent.add(NestedParentModel("Newcastle", listChildNewcastle))
+        listParent.add(NestedParentModel("Tottenham", listChildTottenham))
+        listParent.add(NestedParentModel("Everton", listChildEverton))
     }
 }

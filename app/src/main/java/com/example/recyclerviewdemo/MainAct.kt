@@ -25,5 +25,9 @@ class MainAct : AppCompatActivity() {
         findViewById<TextView>(R.id.tvRecyclerviewNested).setOnClickListener {
             startActivity(Intent(this, RecyclerviewNestedAct::class.java))
         }
+
+        findViewById<TextView>(R.id.tvRecyclerviewNestedAndMultipleType).setOnClickListener {
+            startActivity(Intent(this, RecyclerviewNestedAndMultipleTypeAct::class.java))
+        }
     }
 }
