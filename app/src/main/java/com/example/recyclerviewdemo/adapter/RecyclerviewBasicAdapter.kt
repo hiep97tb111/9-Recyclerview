@@ -11,11 +11,16 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.recyclerviewdemo.R
 import com.example.recyclerviewdemo.model.RecyclerviewBasicModel
 
-class RecyclerviewBasicAdapter(private val listData: ArrayList<RecyclerviewBasicModel>, private var onItemClicked: (RecyclerviewBasicModel, Int) -> Unit): RecyclerView.Adapter<RecyclerviewBasicAdapter.ViewHolder>() {
+class RecyclerviewBasicAdapter(private var listData: ArrayList<RecyclerviewBasicModel>, private var onItemClicked: (RecyclerviewBasicModel, Int) -> Unit): RecyclerView.Adapter<RecyclerviewBasicAdapter.ViewHolder>() {
 
     class ViewHolder (view: View) : RecyclerView.ViewHolder(view){
         val itemTvCounter: TextView = view.findViewById(R.id.itemTvCounter)
         val itemLayoutBasic: ConstraintLayout = view.findViewById(R.id.itemLayoutBasic)
+    }
+
+    fun newData(list: ArrayList<RecyclerviewBasicModel>){
+        listData = list
+        notifyDataSetChanged()
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -25,7 +30,6 @@ class RecyclerviewBasicAdapter(private val listData: ArrayList<RecyclerviewBasic
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.itemTvCounter.text = listData[position].counter
-        Log.e("Logger", position.toString())
 
         when {
             position % 3 == 0 -> {
